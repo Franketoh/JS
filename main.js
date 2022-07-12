@@ -1,4 +1,6 @@
 const nombre = prompt("Ingrese su nombre")
+const direccion = prompt("Ingrese su direccion")
+const contacto = prompt("Deje un numero de contacto")
 let precio = 0
 alert( "Hola, " + nombre + " ¡Bienvenidos a Alpha!")
 
@@ -87,6 +89,9 @@ else {
 }
     alert("El precio total es de "+ preciofinal)
 
-
+const cliente = { nombre:"",
+                direccion:"",
+                contacto:""
+}
 
 
