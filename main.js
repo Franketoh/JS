@@ -1,3 +1,4 @@
+/*
 const nombre = prompt("Ingrese su nombre")
 const direccion = prompt("Ingrese su direccion")
 const contacto = prompt("Deje un numero de contacto")
@@ -94,4 +95,74 @@ const cliente = { nombre:"",
                 contacto:""
 }
 
+*/
+
+
+
+
+
+const nombre = prompt("Ingrese su nombre")
+
+alert( "Hola, " + nombre + " ¡Bienvenidos a Alpha!")
+
+let comida = prompt("Ingrese el tipo de comida deseado (opcion 1 vegetariano, opcion 2 carnivoro)")
+
+while(comida !=1 && comida !=2 ) {
+    alert("La opción seleccionada no existe, paparulo")
+    comida = prompt("Ingrese el tipo de comida deseado (opcion 1 vegetariano, opcion 2 carnivoro)")
+
+}
+
+class vegetariano {
+    constructor(plato, precio,) {
+        this.plato = plato;
+        this.precio = parseFloat(precio);
+    }
+}
+class carnivoro {
+    constructor(plato, precio,) {
+        this.plato = plato;
+        this.precio = parseFloat(precio);
+    }
+
+}
+
+const carnivoros = [];
+carnivoros.push(new carnivoro("Pastel de papa", 500));
+carnivoros.push(new carnivoro("Milanesa a caballo", 550));
+localStorage.setItem('carnivoro', JSON.stringify(carnivoros));
+
+
+const vegetarianos = [];
+vegetarianos.push(new vegetariano("Guiso de Lenteja", 500));
+vegetarianos.push(new vegetariano("Sopa de tomate", 550));
+localStorage.setItem('vegetariano', JSON.stringify(vegetarianos));
+
+let almacenadas = localStorage.getItem('vegetariano');
+let almacenada = localStorage.getItem('carnivoro');
+
+if (almacenadas != null) {
+    let array = JSON.parse(almacenadas);
+    let salida = 'SELECCIONAR PLATO \n';
+    for (let index = 0; index < array.length; index++) {
+        salida += index + ' -> ' + array[index].plato + ' ' + ' $ ' + array[index].precio + '\n';
+    }
+    alert(salida);
+    let eleccion = parseInt(prompt('INGRESAR PLATO'));
+    if ((eleccion >= 0) && (eleccion < array.length)) {
+        alert("PLATO SELECCIONADO " + array[eleccion].plato)
+    } else {(almacenada != null) 
+       
+        for (let index = 0; index < array.length; index++) {
+            salida += index + ' -> ' + array[index].plato + ' ' + ' $ ' + array[index].precio + '\n';
+        }
+        alert(salida);
+        let eleccion = parseInt(prompt('INGRESAR PLATO'));
+        if ((eleccion >= 0) && (eleccion < array.length)) {
+            alert("PLATO SELECCIONADO " + array[eleccion].plato)
+        } else {
+            alert("ERROR DE SELECCION");
+        }
+      } 
+}
 
