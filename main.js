@@ -111,7 +111,7 @@ while(comida !=1 && comida !=2 ) {
     alert("La opción seleccionada no existe, paparulo")
     comida = prompt("Ingrese el tipo de comida deseado (opcion 1 vegetariano, opcion 2 carnivoro)")
 
-}
+} 
 
 class vegetariano {
     constructor(plato, precio,) {
